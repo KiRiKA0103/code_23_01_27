@@ -16,7 +16,7 @@ import bus from '@/components/eventBus.js'
 export default {
   props: {
     p_count: {
-      default: 0,
+      default: 1,
       type: Number,
     },
     p_id: {
@@ -32,11 +32,11 @@ export default {
   methods: {
     sub() {
       if (this.p_count > 1) {
-        bus.$emit('countChange', { id: this.p_id, value: this.p_count - 1 })
+        this.$emit('count_change', this.p_count - 1)
       }
     },
     add() {
-      bus.$emit('countChange', { id: this.p_id, value: this.p_count + 1 })
+      this.$emit('count_change', this.p_count + 1)
     },
   }
 }

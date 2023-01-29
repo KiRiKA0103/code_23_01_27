@@ -19,7 +19,7 @@
         <!-- 商品价格 -->
         <span class="goods-price">$ {{ price.toFixed(2) }}</span>
         <!-- 商品的数量 -->
-        <Counter :p_count="count" :p_id="id"></Counter>
+        <slot></slot>
       </div>
     </div>
   </div>
@@ -50,10 +50,6 @@ export default {
       default: false,
     },
     price: {
-      default: 0,
-      type: Number,
-    },
-    count: {
       default: 0,
       type: Number,
     },
